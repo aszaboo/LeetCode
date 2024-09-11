@@ -1,11 +1,31 @@
 # Leetcode 206: Reverse a Linked List
 
-### Idea
+Given the beginning of a singly linked list head, reverse the list, and return the new beginning of the list.
+
+Example 1:
+
+Input: head = [0,1,2,3]
+
+Output: [3,2,1,0]
+
+Example 2:
+
+Input: head = []
+
+Output: []
+
+
+Constraints:
+
+0 <= The length of the list <= 1000.
+-1000 <= Node.val <= 1000
+
+#### Idea
 The trick behind this problem is always keeping track of where you just were and where your at now. To do this use two pointers in C++, or two objects in Python. It is also important to note what the end condition should be? In other words how do you know when all the nodes have been switched?
 To accomplish this you need to have two variables that keep track of your past node and your current node, then when the current node is a nullptr or None you know you have reached the end of the list.
 Finally to update the root you set root node equal to the prev node.
 
-### Starting Case:
+#### Starting Case:
 The starting case for C++ is that you havent been anywhere yet so:
 
 (C++):
@@ -17,7 +37,7 @@ PrevNode = None
 CurrNode = root
 
 
-### Switch Case
+#### Switch Case
 The switch case is that the node you are currently looking at is not empty
 
 (C++):
@@ -36,20 +56,20 @@ CurrPtr = tempPtr;
 
 (Pyton):
 
-# set a temp ListNode to update currNode with later
+\# set a temp ListNode to update currNode with later
 tempNode = currNode.next
 
-# have currNode point to the prev node
+\# have currNode point to the prev node
 currNode.next = prevNode
 
-# update the prev object to the curr object
+\# update the prev object to the curr object
 prevNode = currNode
 
-# set curr equal to the emp object
+\# set curr equal to the emp object
 currNode = tempNode
 
 
-Pseudo Code:
+#### Pseudo Code:
 
 1. check if the root node is valid and points to something:
     if does not return root
